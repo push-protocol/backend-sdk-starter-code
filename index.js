@@ -14,8 +14,12 @@ const CTA = "https://github.com/ethereum-push-notification-service"; // the link
 (async function Main() {
   // INITIALISE THE SDK
   const epnsSdk = new EpnsSDK(CHANNEL_PK);
+  const subscribers = await epnsSdk.getSubscribedUsers();
+  console.log({
+    subscribers
+  });
 
-  // Dire NOTIFICATIONS
+  // send NOTIFICATIONS
 
   // TODO: change notification title and body to suite needs
   const pushNotificationTitle = "Welcome"; //the title which would appear in a push notification, usually could be a shorter version of the actual message
